@@ -1,6 +1,9 @@
-p {
-    color: red;
-}
+#grid { 
+    display: grid; 
+    gap: 2px; 
+    justify-content: center; 
+    margin: 14px auto;
+ }
 
 .pixel { 
     width: 50px; 
