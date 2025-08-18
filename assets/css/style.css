@@ -12,3 +12,22 @@
     border: 1px solid #ddd; 
     cursor: pointer; 
 }
+
+#palette { 
+    display: flex; 
+    gap: 8px; 
+    justify-content: center; 
+    margin: 10px 0; 
+}
+
+#palette input { 
+    display: none; 
+}
+
+.swatch { 
+    width: 30px; 
+    height: 30px; 
+    border: 2px solid #111; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    display: inline-block; }
