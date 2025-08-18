@@ -8,6 +8,9 @@ function buildGrid() {
      for (let i=0; i < gridSize * gridSize; i++) {
         const px = document.createElement("div");
         px.className = "pixel";
+        px.addEventListener("click",()=> {
+            px.style.backgroundColor = "red";
+        });
         grid.appendChild(px);
      }
 }
