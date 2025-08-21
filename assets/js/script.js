@@ -63,7 +63,11 @@ function revealSolution() {
 
 // Check answer
 function checkAnswer() {
-  console.log(playerGrid)
+  let correct = 0;
+  for (let i = 0; i < solutionGrid.length; i++) {
+    if (solutionGrid[i] === playerGrid[i]) correct++;
+  }
+  console.log(correct)
 }
 
 // Start new game
