@@ -20,18 +20,19 @@ palette.addEventListener("change", () => {
 
 // Build blank grid
 function buildGrid() {
-     grid.style.gridTemplateColumns = `repeat(${gridSize}, 50px)`;
-     playerGrid = [];
-     for (let i=0; i < gridSize * gridSize; i++) {
-        const px = document.createElement("div");
-        px.className = "pixel";
-        px.addEventListener("click",()=> {
-            px.style.backgroundColor = currentColor;
-            playerGrid[i] = currentColor;
-        });
-        grid.appendChild(px);
-        playerGrid.push("white");
-     }
+  grid.innerHTML = "";
+  grid.style.gridTemplateColumns = `repeat(${gridSize}, 50px)`;
+  playerGrid = [];
+  for (let i=0; i < gridSize * gridSize; i++) {
+    const px = document.createElement("div");
+    px.className = "pixel";
+    px.addEventListener("click",()=> {
+        px.style.backgroundColor = currentColor;
+        playerGrid[i] = currentColor;
+    });
+    grid.appendChild(px);
+    playerGrid.push("white");
+  }
 }
 
 // Generate random solution
@@ -85,9 +86,8 @@ function showSolution() {
 // Start new game
 function startGame() {
   result.textContent="";
-  console.log("game start");
   generateSolution();
-  console.log(solutionGrid);
+  buildGrid();
   revealSolution();
   mainBtn.textContent = "Check Answer";
   mainBtn.onclick = checkAnswer;
