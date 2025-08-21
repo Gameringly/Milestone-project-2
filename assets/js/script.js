@@ -52,6 +52,8 @@ function revealSolution() {
 
   let remaining = revealTime;
   timer.textContent = `Memorize: ${remaining}s`;
+  mainBtn.disabled = true; // disable button during reveal
+  grid.classList.add("disabled"); // disable grid clicks
 
   clearInterval(timerInterval);
   timerInterval = setInterval(() => {
@@ -62,6 +64,8 @@ function revealSolution() {
       clearInterval(timerInterval);
       timer.textContent = "";
       pixels.forEach(p => p.style.backgroundColor = "white");
+      mainBtn.disabled = false; // re-enable button
+      grid.classList.remove("disabled"); // re-enable grid clicks
     }
   } ,1000);
 }
