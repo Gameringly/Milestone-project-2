@@ -1,6 +1,7 @@
 let gridSize = 4;
 let revealTime = 5;
 let solutionGrid = [];
+let playerGrid = [];
 let currentColor = "red";
 let timerInterval;
 const colorValues = ["red","green","blue","yellow","orange","purple"];
@@ -18,13 +19,16 @@ palette.addEventListener("change", () => {
 // Build blank grid
 function buildGrid() {
      grid.style.gridTemplateColumns = `repeat(${gridSize}, 50px)`;
+     playerGrid = [];
      for (let i=0; i < gridSize * gridSize; i++) {
         const px = document.createElement("div");
         px.className = "pixel";
         px.addEventListener("click",()=> {
             px.style.backgroundColor = currentColor;
+            playerGrid[i] = currentColor;
         });
         grid.appendChild(px);
+        playerGrid.push("white");
      }
 }
 
@@ -57,12 +61,19 @@ function revealSolution() {
   } ,1000);
 }
 
+// Check answer
+function checkAnswer() {
+  console.log(playerGrid)
+}
+
 // Start new game
 function startGame() {
   console.log("game start");
   generateSolution();
   console.log(solutionGrid);
   revealSolution();
+  mainBtn.textContent = "Check Answer";
+  mainBtn.onclick = checkAnswer;
 }
 
 buildGrid();
