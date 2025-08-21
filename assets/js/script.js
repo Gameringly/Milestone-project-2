@@ -3,8 +3,9 @@ let revealTime = 5;
 let solutionGrid = [];
 let currentColor = "red";
 let timerInterval;
-
 const colorValues = ["red","green","blue","yellow","orange","purple"];
+
+const timer = document.getElementById("timer");
 const grid = document.getElementById("grid");
 const palette = document.getElementById("palette");
 
@@ -40,15 +41,17 @@ function revealSolution() {
   const pixels = grid.querySelectorAll(".pixel");
   solutionGrid.forEach((c,i) => pixels[i].style.backgroundColor = c);
 
-  
   let remaining = revealTime;
+  timer.textContent = `Memorize: ${remaining}s`;
+
   clearInterval(timerInterval);
   timerInterval = setInterval(() => {
     remaining--;
     if (remaining > 0) {
-      console.log(remaining)
+      timer.textContent = `Memorize: ${remaining}s`;
     } else {
       clearInterval(timerInterval);
+      timer.textContent = "";
       pixels.forEach(p => p.style.backgroundColor = "white");
     }
   } ,1000);
