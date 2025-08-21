@@ -23,4 +23,10 @@ function buildGrid() {
      }
 }
 
+// Start new game
+function startGame() {
+  console.log("game start")
+}
+
 buildGrid();
+mainBtn.onclick = startGame;
