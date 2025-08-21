@@ -70,6 +70,16 @@ function checkAnswer() {
     if (solutionGrid[i] === playerGrid[i]) correct++;
   }
   result.textContent = `You got ${correct} of ${solutionGrid.length} correct!`;
+  mainBtn.textContent = "Show Solution";
+  mainBtn.onclick = showSolution;
+}
+
+// Show solution fully
+function showSolution() {
+  const pixels = grid.querySelectorAll(".pixel");
+  solutionGrid.forEach((c,i) => pixels[i].style.backgroundColor = c);
+  mainBtn.textContent = "Start Game";
+  mainBtn.onclick = startGame;
 }
 
 // Start new game
