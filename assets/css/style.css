@@ -49,3 +49,10 @@ button {
     min-width: 120px; 
     font-weight: bold; 
 }
+
+#result { 
+    display: flex;
+    justify-content: center;
+    font-weight: bold; 
+    margin-top: 10px; 
+}

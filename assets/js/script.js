@@ -6,8 +6,10 @@ let currentColor = "red";
 let timerInterval;
 const colorValues = ["red","green","blue","yellow","orange","purple"];
 
-const timer = document.getElementById("timer");
 const grid = document.getElementById("grid");
+const mainBtn = document.getElementById("mainBtn");
+const result = document.getElementById("result");
+const timer = document.getElementById("timer");
 const palette = document.getElementById("palette");
 
 // Get colour from palette  
@@ -67,11 +69,12 @@ function checkAnswer() {
   for (let i = 0; i < solutionGrid.length; i++) {
     if (solutionGrid[i] === playerGrid[i]) correct++;
   }
-  console.log(correct)
+  result.textContent = `You got ${correct} of ${solutionGrid.length} correct!`;
 }
 
 // Start new game
 function startGame() {
+  result.textContent="";
   console.log("game start");
   generateSolution();
   console.log(solutionGrid);
