@@ -35,4 +35,10 @@
     border: 2px solid #111; 
     border-radius: 6px; 
     cursor: pointer; 
-    display: inline-block; }
+    display: inline-block; 
+}
+
+  button { 
+    display: flex;
+    margin: auto;
+  }
