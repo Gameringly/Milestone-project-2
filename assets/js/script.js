@@ -8,6 +8,8 @@ const colorValues = ["red","green","blue","yellow","orange","purple"];
 
 const grid = document.getElementById("grid");
 const mainBtn = document.getElementById("mainBtn");
+const gridSizeSelect = document.getElementById("gridSizeSelect");
+const revealTimeSelect = document.getElementById("revealTimeSelect");
 const result = document.getElementById("result");
 const timer = document.getElementById("timer");
 const palette = document.getElementById("palette");
@@ -23,10 +25,10 @@ function buildGrid() {
   grid.innerHTML = "";
   grid.style.gridTemplateColumns = `repeat(${gridSize}, 50px)`;
   playerGrid = [];
-  for (let i=0; i < gridSize * gridSize; i++) {
+  for (let i = 0; i < gridSize * gridSize; i++) {
     const px = document.createElement("div");
     px.className = "pixel";
-    px.addEventListener("click",()=> {
+    px.addEventListener("click",() => {
         px.style.backgroundColor = currentColor;
         playerGrid[i] = currentColor;
     });
@@ -85,6 +87,8 @@ function showSolution() {
 
 // Start new game
 function startGame() {
+  gridSize = parseInt(gridSizeSelect.value,10);
+  revealTime = parseInt(revealTimeSelect.value,10);
   result.textContent="";
   generateSolution();
   buildGrid();
