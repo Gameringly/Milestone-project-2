@@ -1,6 +1,8 @@
-let gridSize = 4
-let solutionGrid = []
+let gridSize = 4;
+let revealTime = 5;
+let solutionGrid = [];
 let currentColor = "red";
+let timerInterval;
 
 const colorValues = ["red","green","blue","yellow","orange","purple"];
 const grid = document.getElementById("grid");
@@ -33,11 +35,23 @@ function generateSolution() {
   }
 }
 
-
 // Reveal solution briefly
 function revealSolution() {
   const pixels = grid.querySelectorAll(".pixel");
   solutionGrid.forEach((c,i) => pixels[i].style.backgroundColor = c);
+
+  
+  let remaining = revealTime;
+  clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    remaining--;
+    if (remaining > 0) {
+      console.log(remaining)
+    } else {
+      clearInterval(timerInterval);
+      pixels.forEach(p => p.style.backgroundColor = "white");
+    }
+  } ,1000);
 }
 
 // Start new game
