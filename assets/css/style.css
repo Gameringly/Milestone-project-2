@@ -38,6 +38,15 @@
     display: inline-block; 
 }
 
+ #controls { 
+    margin-bottom: 14px; 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 12px; 
+    justify-content: center; 
+    align-items: center; 
+}
+
 button { 
     display: flex;
     margin: auto;

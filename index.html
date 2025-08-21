@@ -9,7 +9,28 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
-<body>    
+<body>   
+
+    <div id="controls">
+        <label>
+            Grid Size:
+            <select id="gridSizeSelect">
+            <option value="3">3x3</option>
+            <option value="4" selected>4x4</option>
+            <option value="5">5x5</option>
+            </select>
+        </label>
+
+        <label>
+            Reveal Time:
+            <select id="revealTimeSelect">
+            <option value="3">3s</option>
+            <option value="5" selected>5s</option>
+            <option value="10">10s</option>
+            </select>
+        </label>
+
+    </div>
     <span id="timer"></span>
 
     <div id="grid"></div>
