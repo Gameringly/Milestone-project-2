@@ -33,11 +33,19 @@ function generateSolution() {
   }
 }
 
+
+// Reveal solution briefly
+function revealSolution() {
+  const pixels = grid.querySelectorAll(".pixel");
+  solutionGrid.forEach((c,i) => pixels[i].style.backgroundColor = c);
+}
+
 // Start new game
 function startGame() {
-  console.log("game start")
+  console.log("game start");
   generateSolution();
-  console.log(solutionGrid)
+  console.log(solutionGrid);
+  revealSolution();
 }
 
 buildGrid();
