@@ -1,3 +1,21 @@
+body {
+    padding-top: 56px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #4F5D75;
+    color: white;
+    padding: 14px 20px;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: left;
+    z-index: 1000;
+}
+
 #grid { 
     display: grid; 
     gap: 2px; 
