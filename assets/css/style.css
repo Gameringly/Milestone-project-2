@@ -65,7 +65,7 @@ button {
     font-weight: bold; 
 }
 
-#result { 
+#result, p { 
     display: flex;
     justify-content: center;
     font-weight: bold; 
