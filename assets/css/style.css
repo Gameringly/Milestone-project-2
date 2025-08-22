@@ -79,7 +79,23 @@ header {
 button { 
     display: flex;
     margin: auto;
-  }
+    padding: 8px 14px; 
+    border-radius: 10px; 
+    border: 1px solid #BFC0C0; 
+    background-color: #2D3142; 
+    color: #FFF;
+    cursor: pointer; 
+    transition: 0.2s; 
+}
+
+button:hover:not(:disabled) { 
+    background-color: #4F5D75; 
+}
+
+button:disabled { 
+    background-color: #ddd; 
+    cursor: not-allowed; 
+}
 
 #timer { 
     display: flex;
