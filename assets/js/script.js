@@ -1,7 +1,10 @@
 /* Intro handling */
+const intro = document.getElementById("intro");
+const main = document.getElementById("mainContent");
+
 document.getElementById("startIntroBtn").addEventListener("click", () => {
-  document.getElementById("intro").style.display = "none";
-  document.getElementById("mainContent").style.display = "block";
+  intro.style.display = "none";
+  main.style.display = "block";
 });
 
 let gridSize = 4;
@@ -20,13 +23,13 @@ const result = document.getElementById("result");
 const timer = document.getElementById("timer");
 const palette = document.getElementById("palette");
 
-// Get colour from palette  
+/** Get colour from palette  */
 palette.addEventListener("change", () => {
   const checked = palette.querySelector("input:checked");
   if (checked) currentColor = checked.value;
 });
 
-// Build blank grid
+/** Build blank grid */
 function buildGrid() {
   grid.innerHTML = "";
   grid.style.gridTemplateColumns = `repeat(${gridSize}, 50px)`;
@@ -43,7 +46,7 @@ function buildGrid() {
   }
 }
 
-// Generate random solution
+/** Generate random solution */
 function generateSolution() {
   solutionGrid = [];
   for (let i=0;i<gridSize*gridSize;i++) {
@@ -51,7 +54,7 @@ function generateSolution() {
   }
 }
 
-// Reveal solution briefly
+/** Reveal solution briefly */
 function revealSolution() {
   const pixels = grid.querySelectorAll(".pixel");
   solutionGrid.forEach((c,i) => pixels[i].style.backgroundColor = c);
@@ -76,7 +79,7 @@ function revealSolution() {
   } ,1000);
 }
 
-// Check answer
+/** Check answer */
 function checkAnswer() {
   let correct = 0;
   for (let i = 0; i < solutionGrid.length; i++) {
@@ -87,7 +90,7 @@ function checkAnswer() {
   mainBtn.onclick = showSolution;
 }
 
-// Show solution fully
+/** Show solution fully */
 function showSolution() {
   const pixels = grid.querySelectorAll(".pixel");
   solutionGrid.forEach((c,i) => pixels[i].style.backgroundColor = c);
@@ -95,7 +98,7 @@ function showSolution() {
   mainBtn.onclick = startGame;
 }
 
-// Start new game
+/** Start new game */
 function startGame() {
   gridSize = parseInt(gridSizeSelect.value,10);
   revealTime = parseInt(revealTimeSelect.value,10);
