@@ -12,43 +12,53 @@
 <body>   
     
     <header>Memory Painter</header>
-    
-    <div id="controls">
-        <label>
-            Grid Size:
-            <select id="gridSizeSelect">
-            <option value="3">3x3</option>
-            <option value="4" selected>4x4</option>
-            <option value="5">5x5</option>
-            </select>
-        </label>
 
-        <label>
-            Reveal Time:
-            <select id="revealTimeSelect">
-            <option value="3">3s</option>
-            <option value="5" selected>5s</option>
-            <option value="10">10s</option>
-            </select>
-        </label>
-
+    <!-- Intro screen -->
+    <div id="intro">
+        <h1>Welcome to Memory Painter 🎨</h1>
+        <p>test</p>
+        <button id="startIntroBtn">Start Game</button>
     </div>
-    <span id="timer"></span>
 
-    <div id="grid"></div>
+    <!-- Main game content -->
+    <div id="mainContent">
+        <div id="controls">
+            <label>
+                Grid Size:
+                <select id="gridSizeSelect">
+                <option value="3">3x3</option>
+                <option value="4" selected>4x4</option>
+                <option value="5">5x5</option>
+                </select>
+            </label>
 
-    <div id="palette">
-        <input type="radio" name="color" id="red" value="red" checked><label class="swatch" style="background:red" for="red"></label>
-        <input type="radio" name="color" id="green" value="green"><label class="swatch" style="background:green" for="green"></label>
-        <input type="radio" name="color" id="blue" value="blue"><label class="swatch" style="background:blue" for="blue"></label>
-        <input type="radio" name="color" id="yellow" value="yellow"><label class="swatch" style="background:yellow" for="yellow"></label>
-        <input type="radio" name="color" id="orange" value="orange"><label class="swatch" style="background:orange" for="orange"></label>
-        <input type="radio" name="color" id="purple" value="purple"><label class="swatch" style="background:purple" for="purple"></label>
+            <label>
+                Reveal Time:
+                <select id="revealTimeSelect">
+                <option value="3">3s</option>
+                <option value="5" selected>5s</option>
+                <option value="10">10s</option>
+                </select>
+            </label>
+
+        </div>
+        <span id="timer"></span>
+
+        <div id="grid"></div>
+
+        <div id="palette">
+            <input type="radio" name="color" id="red" value="red" checked><label class="swatch" style="background:red" for="red"></label>
+            <input type="radio" name="color" id="green" value="green"><label class="swatch" style="background:green" for="green"></label>
+            <input type="radio" name="color" id="blue" value="blue"><label class="swatch" style="background:blue" for="blue"></label>
+            <input type="radio" name="color" id="yellow" value="yellow"><label class="swatch" style="background:yellow" for="yellow"></label>
+            <input type="radio" name="color" id="orange" value="orange"><label class="swatch" style="background:orange" for="orange"></label>
+            <input type="radio" name="color" id="purple" value="purple"><label class="swatch" style="background:purple" for="purple"></label>
+        </div>
+        <p>pick a colour then click the tiles to paint </p>
+        <button id="mainBtn">Start Game</button>
+
+        <div id="result"></div>
     </div>
-    <p>pick a colour then click the tiles to paint </p>
-    <button id="mainBtn">Start Game</button>
-
-    <div id="result"></div>
 
     <!-- Custom Javacript -->
      <script src="assets/js/script.js"></script>

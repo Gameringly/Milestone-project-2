@@ -1,3 +1,9 @@
+/* Intro handling */
+document.getElementById("startIntroBtn").addEventListener("click", () => {
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("mainContent").style.display = "block";
+});
+
 let gridSize = 4;
 let revealTime = 5;
 let solutionGrid = [];

@@ -110,3 +110,8 @@ button:disabled {
     font-weight: bold; 
     margin-top: 10px; 
 }
+
+/* hidden until intro dismissed */
+#mainContent { 
+    display: none; 
+} 
