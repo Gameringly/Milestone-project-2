@@ -7,6 +7,12 @@ document.getElementById("startIntroBtn").addEventListener("click", () => {
   main.style.display = "block";
 });
 
+document.getElementById("helpBtn").addEventListener("click", () => {
+  intro.style.display = "flex";
+  main.style.display = "none";
+});
+
+
 let gridSize = 4;
 let revealTime = 5;
 let solutionGrid = [];
