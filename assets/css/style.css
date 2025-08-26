@@ -35,6 +35,12 @@ header button:hover {
     background: #4F5D75; 
 }
 
+header button:disabled {
+    background-color: #555;
+    color: #ccc;
+    cursor: not-allowed;
+}
+
 /* Intro screen */
 #intro {
     position: fixed;

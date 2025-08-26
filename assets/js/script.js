@@ -1,15 +1,18 @@
 /* Intro handling */
 const intro = document.getElementById("intro");
 const main = document.getElementById("mainContent");
+const helpBtn = document.getElementById("helpBtn");
 
 document.getElementById("startIntroBtn").addEventListener("click", () => {
   intro.style.display = "none";
   main.style.display = "block";
+  helpBtn.disabled = false;
 });
 
 document.getElementById("helpBtn").addEventListener("click", () => {
   intro.style.display = "flex";
   main.style.display = "none";
+  helpBtn.disabled = true;
 });
 
 
