@@ -213,3 +213,8 @@ button:disabled {
 #mainContent { 
     display: none; 
 } 
+
+#error404 {
+    text-align: center;
+    color: #AC0000;
+}
