@@ -15,7 +15,7 @@ document.getElementById("helpBtn").addEventListener("click", () => {
   helpBtn.disabled = true;
 });
 
-
+/* Main game handling */
 let gridSize = 4;
 let revealTime = 5;
 let solutionGrid = [];
@@ -31,6 +31,10 @@ const revealTimeSelect = document.getElementById("revealTimeSelect");
 const result = document.getElementById("result");
 const timer = document.getElementById("timer");
 const palette = document.getElementById("palette");
+const modal = document.getElementById("scoreModal");
+const scoreText = document.getElementById("scoreText");
+const messageText = document.getElementById("messageText");
+const closeModal = document.getElementById("closeModal");
 
 /** Get colour from palette  */
 palette.addEventListener("change", () => {
@@ -97,7 +101,31 @@ function checkAnswer() {
   result.textContent = `You got ${correct} of ${solutionGrid.length} correct!`;
   mainBtn.textContent = "Show Solution";
   mainBtn.onclick = showSolution;
+
+  // Update modal content
+  scoreText.textContent = `You scored ${correct} / ${solutionGrid.length}!`;
+  if (correct === solutionGrid.length) {
+    messageText.textContent = "🎉 Perfect score! Amazing memory!";
+  } else {
+    messageText.textContent = "Keep practicing, you'll get it next time!";
+  }
+
+  // Show modal
+  modal.style.display = "flex";
 }
+
+// Close modal on (X)
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Close modal if user clicks outside the box
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
 
 /** Show solution fully */
 function showSolution() {
