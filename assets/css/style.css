@@ -163,6 +163,7 @@ button:disabled {
     justify-content: center;
     min-width: 120px; 
     font-weight: bold; 
+    color: #AC0000;
 }
 
 #result, p { 
